@@ -1,0 +1,165 @@
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "game_of_thronesregular";
+  src: url("./assets/fonts/game_of_thrones-webfont.woff2") format("woff2"),
+    url("./assets/fonts/game_of_thrones-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  // font-family: "Raleway", sans-serif;
+  font-family: $got-font;
+  line-height: 1.6;
+}
+
+.secondary-font {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.landing {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url(./assets/showcase-img.jpg) no-repeat center center / cover;
+}
+
+.landing::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.nav {
+  &-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    top: 0;
+    height: 4rem;
+    font-size: 40px;
+    background-color: #ffffffe5;
+    position: fixed;
+    border-bottom: 1px solid $secondary-color;
+    z-index: 1;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  &-links {
+    font-size: 1rem;
+    color: #000;
+    list-style: none;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.burger {
+  margin: 0.5rem;
+  // visibility: hidden;
+}
+
+.logo {
+  grid-column: 2/3;
+  margin: auto;
+  height: 65%;
+}
+
+.text {
+  color: #fff;
+  z-index: 1;
+  letter-spacing: 0.2rem;
+  line-height: 2;
+  text-shadow: 1px 1px 10px black;
+
+  &-main {
+    @extend .text;
+    font-size: 70px;
+    font-weight: 600;
+    text-align: center;
+    // visibility: hidden;
+  }
+
+  &-secondary {
+    @extend .text;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+.btn {
+  z-index: 1;
+  padding: 1rem;
+  margin: 1.2rem;
+  transition: all 0.1s ease-in;
+  font: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0);
+  &-light {
+    @extend .btn;
+    background-color: #fff;
+    color: #000;
+    &:hover {
+      background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(0, 0, 0, 0.15) 100%
+        ),
+        radial-gradient(
+            at top center,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 120%
+          )
+          #575656;
+      background-blend-mode: multiply, multiply;
+      color: #fff;
+      border: 1px solid rgb(207, 207, 207);
+    }
+  }
+  &-span {
+    border: 0;
+    font-family: inherit;
+  }
+}
+
+.game-container {
+  position: relative;
+  max-width: 50%;
+  background-color: #b6b6b6;
+}
