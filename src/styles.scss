@@ -1,10 +1,14 @@
 @import "variables";
 
+// Root styling
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+// Fonts / Base styles
 
 @font-face {
   font-family: "game_of_thronesregular";
@@ -28,6 +32,8 @@ a {
   list-style: none;
   text-decoration: none;
 }
+
+// Landing Page
 
 .landing {
   height: 100vh;
@@ -59,6 +65,8 @@ a {
   text-align: center;
   height: 100vh;
 }
+
+// Navbar
 
 .nav {
   &-bar {
@@ -128,6 +136,7 @@ a {
   margin: 1.2rem;
   transition: all 0.1s ease-in;
   font: inherit;
+  cursor: pointer;
   text-decoration: none;
   font-weight: 700;
   border: 1px solid rgba(0, 0, 0, 0);
@@ -149,7 +158,7 @@ a {
           #575656;
       background-blend-mode: multiply, multiply;
       color: #fff;
-      border: 1px solid rgb(207, 207, 207);
+      border: 1px solid #cfcfcf;
     }
   }
   &-span {
@@ -158,8 +167,29 @@ a {
   }
 }
 
-.game-container {
-  position: relative;
-  max-width: 50%;
-  background-color: #b6b6b6;
+.game {
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-image: url(./assets/kings-landing.jpg);
+    background-position: center center / cover;
+  }
+  &-box {
+    position: absolute;
+    min-height: 60vh;
+    min-width: 90vh;
+    border: 1px solid rgba(238, 27, 27, 0.5);
+    border-radius: 5px;
+    background-color: rgba(192, 192, 192, 0.6);
+    font-family: "Simonetta";
+    text-align: center;
+    font-weight: 100;
+  }
+}
+
+.quiz {
+  height: 100vh;
 }
